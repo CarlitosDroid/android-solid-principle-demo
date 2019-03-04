@@ -1,4 +1,4 @@
-package com.example.androidsolidprinciplessample.sample01.model
+package com.example.androidsolidprinciplessample.model.database
 
 import androidx.room.Dao
 import androidx.room.Insert
