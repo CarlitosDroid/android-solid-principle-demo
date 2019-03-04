@@ -1,6 +1,7 @@
 package com.example.androidsolidprinciplessample.sample01_srp
 
 import android.content.Context
+import com.example.androidsolidprinciplessample.model.database.Product
 import com.example.androidsolidprinciplessample.model.database.ProductEntity
 
 class Service(context: Context) {
@@ -11,7 +12,7 @@ class Service(context: Context) {
         productRepository = ProductRepository(context)
     }
 
-    fun calculateProductTax(product: ProductEntity?): Double {
+    fun calculateProductTax(product: Product?): Double {
         //Business logic - validate product
         if (product == null) return 0.0
 
@@ -19,7 +20,7 @@ class Service(context: Context) {
         return product.price * tax
     }
 
-    fun saveProduct(product: ProductEntity?): Boolean {
+    fun saveProduct(product: Product?): Boolean {
         //Business logic - validate product
         if (product == null || product.id < 0 || product.name.isNullOrEmpty()) {
             return false

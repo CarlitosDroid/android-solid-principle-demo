@@ -3,6 +3,7 @@ package com.example.androidsolidprinciplessample.sample01_srp
 import android.content.Context
 import androidx.room.Room
 import com.example.androidsolidprinciplessample.model.database.AppDatabase
+import com.example.androidsolidprinciplessample.model.database.Product
 import com.example.androidsolidprinciplessample.model.database.ProductEntity
 
 class ProductRepository(private val context: Context) {
@@ -13,7 +14,7 @@ class ProductRepository(private val context: Context) {
         initDatabase()
     }
 
-    fun save(product: ProductEntity) {
+    fun save(product: Product) {
         //Insert in Database
         roomConnection!!.getProductDao().insertProduct(
             ProductEntity(
